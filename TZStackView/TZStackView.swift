@@ -158,6 +158,8 @@ public class TZStackView: UIView {
     public func removeArrangedSubview(view: UIView) {
         if let index = arrangedSubviews.indexOf(view) {
             arrangedSubviews.removeAtIndex(index)
+            removeHiddenListener(view)
+            view.removeFromSuperview()
         }
     }
 
